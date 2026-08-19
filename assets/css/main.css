@@ -920,7 +920,7 @@ body.loading {
 }
 
 /* Left Column: Sticky Title */
-.process-text-col { position: sticky; top: 25%; height: max-content; padding-bottom: 2rem; }
+.process-text-col { position: -webkit-sticky; position: sticky; top: 30vh; align-self: start; height: auto; padding-bottom: 2rem; z-index: 10; }
 .process-badge { display: inline-block; border: 1px solid rgba(0, 0, 0, 0.2); padding: 6px 18px; border-radius: 30px; font-size: 0.85rem; font-weight: bold; color: #555; margin-bottom: 1.5rem; }
 .process-title { font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; color: #050505; }
 .process-desc { font-size: var(--fs-p); color: #555; line-height: 1.6; }
@@ -1831,15 +1831,16 @@ body.loading {
         display: none !important;
     }
 }
+
 /* ==================== ULTIMATE HORIZONTAL SCROLL KILLER ==================== */
 html, body {
     max-width: 100% !important;
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
 }
 
 #smooth-wrapper, #smooth-content {
     max-width: 100% !important;
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
 }
 
 /* 100vw ko forcefully 100% par lock kar diya */
