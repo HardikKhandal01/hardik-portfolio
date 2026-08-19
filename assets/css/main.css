@@ -507,7 +507,7 @@ body.loading {
 @media (max-width: 992px) {
     
     /* Mobile Hero Fixes */
-    .hero-bg-img { 
+    .hero-bg-img .hero-bg-video { 
         top: -5%;
         height: 100%;
         object-position: center top; /* Centers Hardik slightly on mobile */
