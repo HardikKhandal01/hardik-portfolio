@@ -358,19 +358,26 @@ body.loading {
     }
     
     .mobile-video-btn {
-        display: flex; /* Show mobile button */
-        width: 100%;
+        display: flex !important; /* Show mobile button */
+        width: 50px;
+        height: 50px;
         justify-content: center;
+        align-items: center;
         background: rgba(0, 0, 0, 0.6); /* Premium dark background */
         border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 14px;
-        border-radius: 30px;
-        margin-top: 10px; /* Spacing below download resume */
-        gap: 10px;
+        border-radius: 50%;
+        padding: 0px;
+        margin-top: 0px; /* Spacing below download resume */
     }
     
-    .mobile-video-btn .video-btn-icon i { font-size: 1.8rem; }
-    .mobile-video-btn .video-btn-text { font-size: 1rem; font-weight: bold; }
+    .mobile-video-btn .video-btn-icon i { 
+        margin: 0;
+        font-size: 1.8rem; }
+    .mobile-video-btn .video-btn-text { 
+        display: none;
+        font-size: 1rem; 
+        font-weight: bold; 
+    }
 }
 
 .btn-outline:hover {
