@@ -509,7 +509,7 @@ body.loading {
     /* Mobile Hero Fixes */
     .hero-bg-img { 
         top: -5%;
-        height: 98%;
+        height: 100%;
         object-position: center top; /* Centers Hardik slightly on mobile */
     } 
     .hero-content {
