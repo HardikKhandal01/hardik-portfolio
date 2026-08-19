@@ -297,6 +297,7 @@ body.loading {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease;
+    pointer-events: none; /* Prevents accidental clicks when hidden */
 }
 
 .hero-bg-video.active {
@@ -318,11 +319,12 @@ body.loading {
 /* Desktop Button Specifics */
 .desktop-video-btn {
     position: absolute;
-    bottom: 8%;
+    bottom: 12%;
     right: 8%; /* Perfect right-side placement */
     flex-direction: column;
     gap: 8px;
     z-index: 5;
+    pointer-events: auto; /* Ensures button is clickable */
 }
 
 .desktop-video-btn .video-btn-icon i {
