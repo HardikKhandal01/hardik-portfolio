@@ -321,4 +321,3 @@ document.addEventListener("DOMContentLoaded", () => {
             heroImage.style.opacity = '1';
         });
     }
-    
