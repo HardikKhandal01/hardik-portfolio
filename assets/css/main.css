@@ -1424,7 +1424,8 @@ body.loading {
 /* ==================== FOOTER SECTION ==================== */
 .footer-section {
     overflow: hidden; /* Prevents any accidental overflow */
-    height: 100vh; /* Strictly 100% of viewport height */
+    height: auto;
+    min-height: 100vh; /* Ensures it never shrinks below full height */
     width: 100vw;
     background-color: #0a0a0a; /* Dark Charcoal/Black Background */
     color: #a1a1aa; /* Light Grey text */
@@ -1462,28 +1463,85 @@ body.loading {
 .footer-link:hover { color: var(--accent); }
 .copyright-text { font-size: 0.85rem; color: #71717a; }
 
-/* Giant Name */
+/* ==================== FOOTER MIDDLE: CITY CROWD VIDEO ==================== */
 .footer-middle {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-grow: 1; /* Automatically takes all middle space */
-}
-.footer-name {
-    font-size: 8vw; /* Massive responsive text */
-    font-weight: 900;
-    color: #ffffff;
-    letter-spacing: -3px;
-    margin: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    white-space: nowrap; /* Prevents wrapping */
-    text-align: center;
-    transition: color 0.3s ease;
+    flex-grow: 1;
+    width: 100%;
+    margin: 1rem 0;
+    position: relative;
 }
 
-.footer-name:hover { 
-    color: var(--accent);
-    cursor: default; /* Prevents text selection cursor */
+.footer-crowd-topbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.75rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    z-index: 10;
+}
+
+.see-you-popup {
+    font-size: clamp(1.3rem, 2.4vw, 2rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    opacity: 0;
+    transform: translateY(20px);
+    display: inline-block;
+}
+
+.footer-back-top {
+    color: #a1a1aa;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: monospace;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-back-top:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.footer-crowd-stage {
+    position: relative;
+    width: calc(100% + 8rem);
+    margin-left: -4rem;
+    margin-right: -4rem;
+    height: clamp(360px, 35vw, 620px);
+    background-color: #ffffff;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-city-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    pointer-events: none;
+    filter: contrast(1.18) brightness(1.03);
+    image-rendering: -webkit-optimize-contrast; /* For Safari */
+    image-rendering: crisp-edges; /* For Firefox */
+}
+
+@media (max-width: 992px) {
+    .footer-crowd-stage {
+        width: calc(100% + 3rem);
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        height: 220px; /* Adjusted height for mobile */
+    }
 }
 
 /* Social Icons */

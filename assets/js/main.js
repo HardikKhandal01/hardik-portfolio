@@ -321,3 +321,35 @@ document.addEventListener("DOMContentLoaded", () => {
             heroImage.style.opacity = '1';
         });
     }
+    // ==================== FOOTER VIDEO SLOW SPEED & POPUP ====================
+    const footerCrowdVideo = document.getElementById('footer-crowd-video');
+    const seeYouPopup = document.getElementById('see-you-popup');
+
+    if (footerCrowdVideo) {
+        // Video ki speed slow karne ke liye (0.6 = 60% speed). Aur slow chahiye toh 0.5 kar dena
+        footerCrowdVideo.playbackRate = 0.6;
+
+        footerCrowdVideo.addEventListener('loadedmetadata', () => {
+            footerCrowdVideo.playbackRate = 0.6;
+        });
+    }
+
+    if (seeYouPopup) {
+        ScrollTrigger.create({
+            trigger: "#footer",
+            start: "top 85%",
+            once: true,
+            onEnter: () => {
+                gsap.to(seeYouPopup, {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.75,
+                    ease: "back.out(1.7)"
+                });
+                if (footerCrowdVideo) {
+                    footerCrowdVideo.playbackRate = 0.6;
+                    footerCrowdVideo.play().catch(() => {});
+                }
+            }
+        });
+    }
